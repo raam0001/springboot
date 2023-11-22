@@ -9,5 +9,13 @@ steps:
     - 'deploy'
     - '--project'
     - 'scenic-energy-404510'
-    - '--options'
-    - 'logging=CLOUD_LOGGING_ONLY'
+    - '--version'
+    - '$BUILD_ID'
+    - '--promote'
+    - '--stop-previous-version'
+    - '--quiet'
+    - '--verbosity=info'
+    - '--image-url=gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
