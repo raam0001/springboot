@@ -1,0 +1,7 @@
+steps:
+- name: 'maven:3.6.3-jdk-11'
+  entrypoint: 'mvn'
+  args: ['clean', 'install']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', '--project', 'scenic-energy-404510']
