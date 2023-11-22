@@ -4,4 +4,10 @@ steps:
   args: ['clean', 'install']
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', '--project', 'scenic-energy-404510']
+  args:
+    - 'app'
+    - 'deploy'
+    - '--project'
+    - 'scenic-energy-404510'
+    - '--options'
+    - 'logging=CLOUD_LOGGING_ONLY'
